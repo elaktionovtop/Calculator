@@ -2,27 +2,26 @@
 // запросить число
 // считать текст
 // преобразовать текст в число
-// + запросить знак операции  (+ - * /)
+// запросить знак операции  (+ - * /)
 // ввести второе число
-// - сложить два числа
-// + выполнить операцию в зависимости от знака
+// выполнить операцию в зависимости от знака
 // вывести результат
 // Выйти
 
 WriteTitle("Калькулятор");
 
 Console.Write("Введите первое число: ");
-string input1 = Console.ReadLine();
-int number1 = int.Parse(input1);
+string input = Console.ReadLine();
+double number1 = double.Parse(input);
 
 Console.Write("Введите знак операции (+ - * /): ");          
 string operation = Console.ReadLine();
 
 Console.Write("Введите второе число: ");
-string input2 = Console.ReadLine();
-int number2 = int.Parse(input2);
+input = Console.ReadLine();
+double number2 = double.Parse(input);
 
-int result = 0;
+double result = 0;
 
 if (operation == "+")
 {
@@ -41,7 +40,7 @@ if (operation == "/")
     result = number1 / number2;
 }
 
-Console.WriteLine($"Результат: {result}");
+Console.WriteLine($"{number1} {operation} {number2} = {result:F2}");
 
 ExitApp();
 
