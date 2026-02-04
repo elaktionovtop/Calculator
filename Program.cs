@@ -56,12 +56,12 @@ bool  TryReadDouble(string prompt, out double number)
 
 string  GetOperationSign()
 { 
-    Console.Write("Введите знак операции (+ - * /): ");          
+    Console.Write("Введите знак операции (+ - * / ^): ");          
     string operation = Console.ReadLine();
     while (operation != "+" && operation != "-" && operation != "*" && operation != "/"
-        && operation != "")
+        && operation != "^" && operation != "")
     {
-        Console.Write("Ошибка! Введите корректный знак операции (+ - * /): ");
+        Console.Write("Ошибка! Введите корректный знак операции (+ - * / ^): ");
         operation = Console.ReadLine();
     }
     return operation;
@@ -83,6 +83,9 @@ double Calculate(double num1, double num2, string op)
             break;
         case "/":
             res = num1 / num2;
+            break;
+        case "^":
+            res = Math.Pow(num1, num2);
             break;
         default:
             Console.WriteLine("Ошибка! Некорректный знак операции.");
